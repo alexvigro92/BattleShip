@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+
+td {
+    border: 2px solid black;
+    vertical-align: top;
+    height:50px;
+    width:50px;
+}
+
+.zoom{
+		transition: 1s ease;
+ 		-moz-transition: 1s ease; /* Firefox */
+ 		-webkit-transition: 1s ease; /* Chrome - Safari */
+ 		-o-transition: 1s ease; /* Opera */
+	}
+	.zoom:hover{
+		transform : scale(2);
+		-moz-transform : scale(2); /* Firefox */
+		-webkit-transform : scale(2); /* Chrome - Safari */
+		-o-transform : scale(2); /* Opera */
+		-ms-transform : scale(2); /* IE9 */
+	}

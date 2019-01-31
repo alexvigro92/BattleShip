@@ -1,0 +1,34 @@
+<nav class="navbar navbar-fixed navbar-light" style="background-color: #e3f2fd;">
+  <div class="container">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="/" style="padding-top:15px;">
+          <span style="float:right;" class="hidden-xs">IOT BattleShip</span>
+        </a>
+        <button type="button" class="btn btn-outline-primary" (click)="newData()" style="float: right;margin-top: 10px;">New Game</button>
+    </div>
+  </div>
+</nav>
+
+<div class="container" style="margin-top: 20px; margin-bottom: 20px;">
+  <div class="row justify-content-md-center justify-content-xs-center justify-content-sm-center justify-content-lg-center">
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 marginTop5">
+      <table align="center">
+        <tr *ngFor="let row of DataLocal">
+          <td *ngFor="let col of row" (click)="putShip(col,col.fixed)" style="text-align:center;" [ngStyle]="{'background-color': col.color}">
+            {{col.val}}
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 marginTop5">
+      <table align="center">
+        <tr *ngFor="let row of DataForeign">
+          <td *ngFor="let col of row" style="text-align:center;" (click)="getId(col,col.fixed)">
+            {{col.val}}
+            <i class="fa fa-bomb fa-2x marginTop1" [ngStyle]="{'color': col.color}" [@zoomOut]='col.bomb' [hidden]="col.hidden" aria-hidden="true"></i>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
